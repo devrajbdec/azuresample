@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "detraindf"
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
+		},
+		"InputBlob_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"BlobFileTrigger_properties_remote_trigger_parameters_ParamFile": {
+			"value": "@triggerBody().fileName"
+		},
+		"BlobFileTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/eba27aa5-a054-4a01-bafd-20ac0a5da231/resourceGroups/detrain/providers/Microsoft.Storage/storageAccounts/detraininputstore"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
