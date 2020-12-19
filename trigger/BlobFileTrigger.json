@@ -1,0 +1,27 @@
+{
+	"name": "BlobFileTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "remote_trigger",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ParamFile": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/inputsales/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/eba27aa5-a054-4a01-bafd-20ac0a5da231/resourceGroups/detrain/providers/Microsoft.Storage/storageAccounts/detraininputstore",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

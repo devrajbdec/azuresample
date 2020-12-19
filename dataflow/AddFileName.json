@@ -1,0 +1,32 @@
+{
+	"name": "AddFileName",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "InputCSVPlaceHolder",
+						"type": "DatasetReference"
+					},
+					"name": "ReadFromSource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "OutputStage",
+						"type": "DatasetReference"
+					},
+					"name": "OutputCSV"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DerivedColumn1"
+				}
+			],
+			"script": "parameters{\n\tInputFileName as string\n}\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> ReadFromSource\nReadFromSource derive(file_name_column = $InputFileName,\n\t\tregion_id = split($InputFileName, \"_\")[1]) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> OutputCSV"
+		}
+	}
+}

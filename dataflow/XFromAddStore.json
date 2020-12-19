@@ -1,0 +1,32 @@
+{
+	"name": "XFromAddStore",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "InputCSVPlaceHolder",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "OutputStage",
+						"type": "DatasetReference"
+					},
+					"name": "OutputSinkWithStore"
+				}
+			],
+			"transformations": [
+				{
+					"name": "AddStoreId"
+				}
+			],
+			"script": "parameters{\n\tdf as string\n}\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 derive(store_id = $df) ~> AddStoreId\nAddStoreId sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:[(concat($df, '.csv'))],\n\ttruncate: true,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> OutputSinkWithStore"
+		}
+	}
+}
