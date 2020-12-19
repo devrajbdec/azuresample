@@ -26,7 +26,7 @@
 					"name": "DerivedColumn1"
 				}
 			],
-			"script": "parameters{\n\tInputFileName as string\n}\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> ReadFromSource\nReadFromSource derive(file_name_column = $InputFileName,\n\t\tregion_id = split($InputFileName, \"_\")[1]) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> OutputCSV"
+			"script": "parameters{\n\tInputFileName as string\n}\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> ReadFromSource\nReadFromSource derive(file_name_column = $InputFileName,\n\t\tregion_id = split($InputFileName, \"_\")[2]) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> OutputCSV"
 		}
 	}
 }
