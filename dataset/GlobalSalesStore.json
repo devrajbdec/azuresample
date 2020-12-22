@@ -18,6 +18,67 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "Order ID",
+				"type": "String"
+			},
+			{
+				"name": "Order Date",
+				"type": "String"
+			},
+			{
+				"name": "Ship Mode",
+				"type": "String"
+			},
+			{
+				"name": "Segment",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "Category",
+				"type": "String"
+			},
+			{
+				"name": "Sub-Category",
+				"type": "String"
+			},
+			{
+				"name": "Sales",
+				"type": "String"
+			},
+			{
+				"name": "Quantity",
+				"type": "String"
+			},
+			{
+				"name": "Discount",
+				"type": "String"
+			},
+			{
+				"name": "Profit",
+				"type": "String"
+			},
+			{
+				"name": "Shipping Cost",
+				"type": "String"
+			},
+			{
+				"name": "Returns",
+				"type": "String"
+			}
+		]
 	}
 }
