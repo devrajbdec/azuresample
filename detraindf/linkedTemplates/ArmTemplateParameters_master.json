@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "detraindf"
 		},
+		"AzureSalesDatabase_connectionString": {
+			"value": ""
+		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"value": ""
 		},
