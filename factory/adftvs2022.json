@@ -1,0 +1,9 @@
+{
+	"name": "adftvs2022",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3631bd1a-5268-4f23-9a46-458538583e1a",
+		"tenantId": "f06a8b29-0dfb-454f-aabd-18109c46e51d"
+	}
+}
